@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">DemiurgesGame</string>
+    <string name="cellular_filling">Клеточное наполнение</string>
+    <string name="create">СОТВОРИТЬ</string>
+    <string name="dead">Мёртвая</string>
+    <string name="or_pretending_to">или прикидывается</string>
+    <string name="lively">Живая</string>
+    <string name="and_its_moving">и шевелится!</string>
+    <string name="life">Жизнь</string>
+    <string name="peek_a_boo">Ку-ку!</string>
 </resources>
