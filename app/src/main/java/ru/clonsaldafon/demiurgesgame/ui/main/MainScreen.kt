@@ -25,6 +25,10 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import ru.clonsaldafon.demiurgesgame.R
+import ru.clonsaldafon.demiurgesgame.data.model.CellDead
+import ru.clonsaldafon.demiurgesgame.data.model.CellLife
+import ru.clonsaldafon.demiurgesgame.data.model.CellLively
+import ru.clonsaldafon.demiurgesgame.data.model.Cell
 import ru.clonsaldafon.demiurgesgame.ui.cell.CellCard
 import ru.clonsaldafon.demiurgesgame.ui.theme.LightPurple
 import ru.clonsaldafon.demiurgesgame.ui.theme.Purple
@@ -33,7 +37,7 @@ import ru.clonsaldafon.demiurgesgame.ui.theme.Typography
 @Preview(showSystemUi = true)
 @Composable
 fun MainScreen() {
-    val cells = listOf<String>("Card_1", "Card_2", "Card_3")
+    val cells = listOf<Cell>(CellDead(), CellLively(), CellLife())
 
     Box(
         modifier = Modifier
@@ -71,7 +75,7 @@ fun MainScreen() {
                     )
             ) {
                 items(cells) {
-                    CellCard()
+                    CellCard(it)
                 }
             }
 
