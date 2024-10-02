@@ -30,6 +30,7 @@ import ru.clonsaldafon.demiurgesgame.ui.theme.Typography
 
 @Composable
 fun CellCard(cell: Cell) {
+
     val context = LocalContext.current
 
     Card(

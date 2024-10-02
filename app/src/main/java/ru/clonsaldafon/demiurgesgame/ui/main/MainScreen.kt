@@ -16,6 +16,9 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
@@ -37,7 +40,10 @@ import ru.clonsaldafon.demiurgesgame.ui.theme.Typography
 @Preview(showSystemUi = true)
 @Composable
 fun MainScreen() {
-    val cells = listOf<Cell>(CellDead(), CellLively(), CellLife())
+
+    val viewModel by remember {
+        mutableStateOf(MainViewModel())
+    }
 
     Box(
         modifier = Modifier
@@ -74,13 +80,13 @@ fun MainScreen() {
                         bottom = 22.dp
                     )
             ) {
-                items(cells) {
+                items(viewModel.cells) {
                     CellCard(it)
                 }
             }
 
             Button(
-                onClick = { /* Действие кнопки */ },
+                onClick = { viewModel.addRandomCell() },
                 modifier = Modifier
                     .fillMaxWidth()
                     .wrapContentHeight()
